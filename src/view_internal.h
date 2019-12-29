@@ -18,10 +18,10 @@
 
 #include <stdint.h>
 
-#define MENU_MAIN_APP_LINE1 "Cosmos"
+#define MENU_MAIN_APP_LINE1 "XAR"
 
 #ifdef TESTING_ENABLED
-#define MENU_MAIN_APP_LINE2 "Cosmos TEST!"
+#define MENU_MAIN_APP_LINE2 "XAR TEST!"
 #else
 #define MENU_MAIN_APP_LINE2 "App"
 #endif
