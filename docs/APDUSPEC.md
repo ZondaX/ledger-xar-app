@@ -7,7 +7,7 @@ The general structure of commands and responses is as follows:
 
 | Field   | Type     | Content                | Note |
 | :------ | :------- | :--------------------- | ---- |
-| CLA     | byte (1) | Application Identifier | 0x55 |
+| CLA     | byte (1) | Application Identifier | 0x07 |
 | INS     | byte (1) | Instruction ID         |      |
 | P1      | byte (1) | Parameter 1            |      |
 | P2      | byte (1) | Parameter 2            |      |
@@ -44,7 +44,7 @@ The general structure of commands and responses is as follows:
 
 | Field | Type     | Content                | Expected |
 | ----- | -------- | ---------------------- | -------- |
-| CLA   | byte (1) | Application Identifier | 0x55     |
+| CLA   | byte (1) | Application Identifier | 0x07     |
 | INS   | byte (1) | Instruction ID         | 0x00     |
 | P1    | byte (1) | Parameter 1            | ignored  |
 | P2    | byte (1) | Parameter 2            | ignored  |
@@ -69,7 +69,7 @@ The general structure of commands and responses is as follows:
 
 | Field | Type     | Content                | Expected  |
 | ----- | -------- | ---------------------- | --------- |
-| CLA   | byte (1) | Application Identifier | 0x55      |
+| CLA   | byte (1) | Application Identifier | 0x07      |
 | INS   | byte (1) | Instruction ID         | 0x02      |
 | P1    | byte (1) | Payload desc           | 0 = init  |
 |       |          |                        | 1 = add   |
@@ -86,7 +86,7 @@ All other packets/chunks should contain message to sign
 | Field      | Type     | Content                | Expected  |
 | ---------- | -------- | ---------------------- | --------- |
 | Path[0]    | byte (4) | Derivation Path Data   | 44        |
-| Path[1]    | byte (4) | Derivation Path Data   | 118       |
+| Path[1]    | byte (4) | Derivation Path Data   | 463       |
 | Path[2]    | byte (4) | Derivation Path Data   | ?         |
 | Path[3]    | byte (4) | Derivation Path Data   | ?         |
 | Path[4]    | byte (4) | Derivation Path Data   | ?         |
@@ -112,7 +112,7 @@ All other packets/chunks should contain message to sign
 
 | Field      | Type           | Content                | Expected       |
 | ---------- | -------------- | ---------------------- | -------------- |
-| CLA        | byte (1)       | Application Identifier | 0x55           |
+| CLA        | byte (1)       | Application Identifier | 0x07           |
 | INS        | byte (1)       | Instruction ID         | 0x04           |
 | P1         | byte (1)       | Parameter 1            | ignored        |
 | P2         | byte (1)       | Parameter 2            | ignored        |
@@ -120,7 +120,7 @@ All other packets/chunks should contain message to sign
 | HRP_LEN    | byte(1)        | Bech32 HRP Length      | 1<=HRP_LEN<=83 |
 | HRP        | byte (HRP_LEN) | Bech32 HRP             |                |
 | Path[0]    | byte (4)       | Derivation Path Data   | 44             |
-| Path[1]    | byte (4)       | Derivation Path Data   | 118            |
+| Path[1]    | byte (4)       | Derivation Path Data   | 463            |
 | Path[2]    | byte (4)       | Derivation Path Data   | ?              |
 | Path[3]    | byte (4)       | Derivation Path Data   | ?              |
 | Path[4]    | byte (4)       | Derivation Path Data   | ?              |
