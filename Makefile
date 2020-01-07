@@ -22,7 +22,7 @@ endif
 include $(BOLOS_SDK)/Makefile.defines
 
 # Main app configuration
-APPNAME = "CSDT"
+APPNAME = "XAR"
 APPVERSION_M=2
 APPVERSION_N=2
 APPVERSION_P=3

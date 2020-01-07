@@ -162,8 +162,8 @@ parser_error_t tx_display_set_query(uint16_t displayIdx, uint16_t *outStartToken
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define NUM_KEY_SUBSTITUTIONS 29
-#define NUM_VALUE_SUBSTITUTIONS 8
+#define NUM_KEY_SUBSTITUTIONS 34
+#define NUM_VALUE_SUBSTITUTIONS 12
 
 typedef struct {
     char str1[50];
@@ -224,6 +224,27 @@ static const key_subst_t key_substitutions[NUM_KEY_SUBSTITUTIONS] = {
         // MsgWithdrawDelegationReward
 //        {"msgs/value/delegator_address", "Delegator"},      // duplicated
 //        {"msgs/value/validator_address", "Validator"},      // duplicated
+
+        // csdt / MsgDepositCollateral
+        {"msgs/value/sender",                 "Sender"},
+        {"msgs/value/collateral_denom",       "Coll Denom"},
+        {"msgs/value/collateral_change",       "Change"},
+
+        // csdt / MsgWithdrawCollateral
+//        {"msgs/value/sender",                 "Sender"},
+//        {"msgs/value/collateral_denom",       "Coll Denom"},
+//        {"msgs/value/collateral_change",       "Coll Change"},
+
+        // csdt / MsgSettleDebt
+//        {"msgs/value/sender",                 "Sender"},
+//        {"msgs/value/collateral_denom",       "Coll Denom"},
+        {"msgs/value/debt_denom",             "Debt Denom"},
+        {"msgs/value/debt_change",            "Debt Change"},
+
+        // csdt / MsgWithdrawDebt
+//        {"msgs/value/sender",                 "Sender"},
+//        {"msgs/value/collateral_denom",       "Denom"},
+//        {"msgs/value/collateral_denom",       "Change"},
 };
 
 static const key_subst_t value_substitutions[NUM_VALUE_SUBSTITUTIONS] = {
@@ -235,7 +256,12 @@ static const key_subst_t value_substitutions[NUM_VALUE_SUBSTITUTIONS] = {
         {"cosmos-sdk/MsgDeposit",                  "Deposit"},
         {"cosmos-sdk/MsgVote",                     "Vote"},
         {"cosmos-sdk/MsgWithdrawDelegationReward", "Withdraw Reward"},
-};
+        /////
+        {"csdt/MsgDepositCollateral", "Deposit Collateral"},
+        {"csdt/MsgWithdrawCollateral", "Withdraw Collateral"},
+        {"csdt/MsgSettleDebt", "Settle Debt"},
+        {"csdt/MsgWithdrawDebt", "Withdraw Debt"},
+        };
 
 void tx_display_make_friendly() {
     _indexRootFields();
